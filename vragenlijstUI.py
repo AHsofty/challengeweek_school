@@ -168,32 +168,6 @@ class Ui_Form(object):
 
 
 
-            # for i in domeinen:
-            #     print(f"Jouw domein is: {i.domein} met {i.punten} punten")
-
-            #     nieuwe_lijst = []
-            #     for p in self.vragen:
-            #         if p.domein == i.afgekorte_domein and p.gegeven_antwoord > 3:
-            #             nieuwe_lijst.append(p)
-
-            #     lijst_met_quotes = []
-            #     if len(nieuwe_lijst) != 0:
-            #         for p in nieuwe_lijst:
-            #             lijst_met_quotes.append(p.quote)
-            #     else:
-            #         for p in vragen:
-            #             lijst_met_quotes.append(p.quote)
-            #             quote_amount -= 1
-            #             if quote_amount == 0:
-            #                 break
-
-            #     zin = ""
-            #     for p in lijst_met_quotes:
-            #         zin += p+" "
-                # print(zin)
-
-
-
     def on_click_back(self):
         if self.index != 0:
             self.index -= 1
