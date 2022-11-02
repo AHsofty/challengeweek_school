@@ -11,7 +11,7 @@ if naam == "Harry Potter":
     print("Wat cool, jij hebt gekozen voor", l)
     exit()
 
-print(f"Hallo {naam}, laten we beginnen0")
+print(f"Hallo {naam}, laten we beginnen")
 puntensysteem = Puntensysteem()
 excel = excelreader.Excelreader("database.xls", "Vragen")
 vragen = excel.get_data()
@@ -33,7 +33,6 @@ for i in vragen:
             print("Dat antwoord is niet mogelijk, probeer opnieuw")
 
 vragen.sort(key=attrgetter('gegeven_antwoord'), reverse=True)  # Sorteert de vragen op basis van de hoogste dingen
-
 domeinen = puntensysteem.get_domeinen()
 for i in domeinen:
     print(f"Jouw domein is: {i.domein} met {i.punten} punten")
