@@ -1,2 +1,2 @@
 # challengeweek_school
-Het project voor ons school
+Dit is het groepsopdracht voor de opleiding informatica
