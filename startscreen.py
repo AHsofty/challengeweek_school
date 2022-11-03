@@ -15,12 +15,9 @@ class Ui_Background(object):
 
     def openNewWindow(self):
         self.window = QtWidgets.QMainWindow()
-
         self.ui = vragenlijstform()
         self.ui.setupUi(self.window)
-
         self.window.activateWindow()
-
         self.window.show()
 
     def setupUi(self, Background):
@@ -28,7 +25,8 @@ class Ui_Background(object):
         Background.setWindowModality(QtCore.Qt.NonModal)
         Background.resize(537, 430)
         Background.setAutoFillBackground(False)
-        Background.setInputMethodHints(QtCore.Qt.ImhNone)
+
+
         self.start_button = QtWidgets.QPushButton(Background)
         self.start_button.setGeometry(QtCore.QRect(210, 250, 111, 41))
         font = QtGui.QFont()
@@ -62,7 +60,7 @@ class Ui_Background(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Background = QtWidgets.QDialog()
+    Background = QtWidgets.QWidget()
     ui = Ui_Background()
     ui.setupUi(Background)
     Background.show()

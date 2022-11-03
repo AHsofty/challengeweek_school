@@ -16,17 +16,15 @@ class Ui_Form(object):
 
     def setupUi(self, Form):
         Form.setObjectName("Form")
-
         Form.resize(880, 879)
-        Form.setFixedSize(880, 879) # Let op dit is hardcoded
-        
         self.vraag_lable = QtWidgets.QLabel(Form)
-        self.vraag_lable.setGeometry(QtCore.QRect(0, 20, 881, 181))
+        self.vraag_lable.setGeometry(QtCore.QRect(60, 30, 751, 171))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.vraag_lable.setFont(font)
         self.vraag_lable.setAlignment(QtCore.Qt.AlignCenter)
         self.vraag_lable.setObjectName("vraag_lable")
+        self.vraag_lable.setWordWrap(True)
         self.next_button = QtWidgets.QPushButton(Form)
         self.next_button.setGeometry(QtCore.QRect(730, 790, 121, 41))
         self.next_button.setObjectName("next_button")
@@ -34,36 +32,65 @@ class Ui_Form(object):
         self.back_button.setGeometry(QtCore.QRect(40, 782, 111, 51))
         self.back_button.setObjectName("back_button")
         self.button_one = QtWidgets.QRadioButton(Form)
-        self.button_one.setGeometry(QtCore.QRect(40, 490, 131, 61))
+        self.button_one.setGeometry(QtCore.QRect(70, 490, 131, 61))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_one.setFont(font)
+        self.button_one.setText("")
         self.button_one.setObjectName("button_one")
         self.button_two = QtWidgets.QRadioButton(Form)
-        self.button_two.setGeometry(QtCore.QRect(214, 490, 141, 61))
+        self.button_two.setGeometry(QtCore.QRect(250, 490, 141, 61))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_two.setFont(font)
+        self.button_two.setText("")
         self.button_two.setObjectName("button_two")
         self.button_three = QtWidgets.QRadioButton(Form)
-        self.button_three.setGeometry(QtCore.QRect(400, 490, 131, 61))
+        self.button_three.setGeometry(QtCore.QRect(410, 490, 131, 61))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_three.setFont(font)
+        self.button_three.setText("")
         self.button_three.setObjectName("button_three")
         self.button_four = QtWidgets.QRadioButton(Form)
-        self.button_four.setGeometry(QtCore.QRect(550, 494, 131, 51))
+        self.button_four.setGeometry(QtCore.QRect(570, 490, 131, 51))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_four.setFont(font)
+        self.button_four.setText("")
         self.button_four.setObjectName("button_four")
         self.button_five = QtWidgets.QRadioButton(Form)
-        self.button_five.setGeometry(QtCore.QRect(726, 493, 121, 51))
+        self.button_five.setGeometry(QtCore.QRect(760, 493, 121, 51))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_five.setFont(font)
+        self.button_five.setText("")
         self.button_five.setObjectName("button_five")
-        self.vraag_lable.setWordWrap(True)
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setGeometry(QtCore.QRect(1, 450, 141, 71))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setWordWrap(True)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setGeometry(QtCore.QRect(351, 450, 141, 71))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_2.setFont(font)
+        self.label_2.setScaledContents(False)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setWordWrap(True)
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(Form)
+        self.label_3.setGeometry(QtCore.QRect(700, 450, 141, 71))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setWordWrap(True)
+        self.label_3.setObjectName("label_3")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -73,14 +100,13 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         self._translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+
         self.vraag_lable.setText(_translate("Form", "Hier kom de vraag te staan"))
         self.next_button.setText(_translate("Form", "Volgende"))
         self.back_button.setText(_translate("Form", "Terug"))
-        self.button_one.setText(_translate("Form", "1"))
-        self.button_two.setText(_translate("Form", "2"))
-        self.button_three.setText(_translate("Form", "3"))
-        self.button_four.setText(_translate("Form", "4"))
-        self.button_five.setText(_translate("Form", "5"))
+        self.label.setText(_translate("Form", "Zeer oneens"))
+        self.label_2.setText(_translate("Form", "Neutraal"))
+        self.label_3.setText(_translate("Form", "Zeer eens"))
 
   
         # Initial setup
@@ -165,6 +191,32 @@ class Ui_Form(object):
             eindschermpje.specialisatie = domein.domein
             eindschermpje.quote = zin
             self.openNewWindow()
+
+
+
+            # for i in domeinen:
+            #     print(f"Jouw domein is: {i.domein} met {i.punten} punten")
+
+            #     nieuwe_lijst = []
+            #     for p in self.vragen:
+            #         if p.domein == i.afgekorte_domein and p.gegeven_antwoord > 3:
+            #             nieuwe_lijst.append(p)
+
+            #     lijst_met_quotes = []
+            #     if len(nieuwe_lijst) != 0:
+            #         for p in nieuwe_lijst:
+            #             lijst_met_quotes.append(p.quote)
+            #     else:
+            #         for p in vragen:
+            #             lijst_met_quotes.append(p.quote)
+            #             quote_amount -= 1
+            #             if quote_amount == 0:
+            #                 break
+
+            #     zin = ""
+            #     for p in lijst_met_quotes:
+            #         zin += p+" "
+                # print(zin)
 
 
 
