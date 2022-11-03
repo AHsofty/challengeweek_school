@@ -52,7 +52,7 @@ class Ui_Background(object):
         _translate = QtCore.QCoreApplication.translate
         Background.setWindowTitle(_translate("Background", "Dialog"))
         self.start_button.setText(_translate("Background", "START"))
-        self.label.setText(_translate("Background", "De IT Soorteer Hoet"))
+        self.label.setText(_translate("Background", "De IT Soorteer Hoed"))
         self.start_button.clicked.connect(self.openNewWindow)
 
 

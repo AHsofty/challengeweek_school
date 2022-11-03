@@ -37,9 +37,6 @@ class Ui_Form(object):
         self.label_2.setFont(font)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
-        self.opnieuw_knop = QtWidgets.QPushButton(Form)
-        self.opnieuw_knop.setGeometry(QtCore.QRect(20, 400, 93, 28))
-        self.opnieuw_knop.setObjectName("opnieuw_knop")
         self.exit_button = QtWidgets.QPushButton(Form)
         self.exit_button.setGeometry(QtCore.QRect(450, 400, 93, 28))
         self.exit_button.setObjectName("exit_button")
@@ -53,10 +50,13 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.specialisatie.setText(_translate("Form", Ui_Form.specialisatie))
         self.label_2.setText(_translate("Form", Ui_Form.quote))
-        self.opnieuw_knop.setText(_translate("Form", "Opnieuw"))
         self.exit_button.setText(_translate("Form", "Exit"))
 
+        self.exit_button.clicked.connect(self.exitt)
 
+
+    def exitt(self):
+        exit()
 
 if __name__ == "__main__":
     import sys
